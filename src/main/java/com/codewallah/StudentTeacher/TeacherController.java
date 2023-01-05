@@ -38,4 +38,16 @@ public class TeacherController {
         }
         return null;
     }
+
+    //getting all teachers
+    @GetMapping("get_all_teachers")
+    public List<String> getAllTeachers()
+    {
+        List<String> listOfTeachers= new ArrayList<>();
+        for(Teacher t: teacherDb.values())
+        {
+            listOfTeachers.add(t.toString());
+        }
+        return listOfTeachers;
+    }
 }
